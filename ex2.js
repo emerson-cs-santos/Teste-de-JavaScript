@@ -145,13 +145,19 @@ alert(colunas_name[ncount_coluna]);
 
     for (var ncount_linha = 0; ncount_linha < Object.keys(videogame).length; ncount_linha ++) {
         
+      Object.keys(videogame[ncount_linha]).forEach(function(value) {
+        var valor_linha = videogame[ncount_linha][value];
+
         // CRIA LINHA
         var tdfor = document.createElement('td');
         // ADICIONA LINHA AO GRUPO DE LINHA
-        trfor.appendChild(tdfor);
+        trfor.appendChild(tdfor);        
+        
+        tdfor.innerHTML = valor_linha;
+		});      
 
       // tdfor.innerHTML=videogame[ncount_linha].colunas_name[ncount_coluna];
-       tdfor.innerHTML=videogame[ncount_linha].nome;
+       //tdfor.innerHTML=videogame[ncount_linha].nome;
     }
  }
 
