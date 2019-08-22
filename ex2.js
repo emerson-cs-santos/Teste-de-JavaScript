@@ -9,68 +9,65 @@ var colunas =
         ,"Número de controles"
         ,"CPU"
         ,"Mídia"
-    ]
-  ;  
+    ];  
 
-  // VETOR COM OS NOMES USADOS NO VETOR OBJETO DAS LINHAS PARA CRIAR AS COLUNAS
-var colunas_name = 
-[
-    "nome"
-    ,"ano_fab"
-    ,"nro_control"
-    ,"cpu"
-    ,"midia"
-]
-;  
+//   // VETOR COM OS NOMES USADOS NO VETOR OBJETO DAS LINHAS PARA CRIAR AS COLUNAS
+// var colunas_name = 
+// [
+//     "nome"
+//     ,"ano_fab"
+//     ,"nro_control"
+//     ,"cpu"
+//     ,"midia"
+// ];  
     
-    // VETOR COM OBJETO, POSSUI AS LINHAS E COLUNAS JÁ PREENCHIDAS
-    var videogame = new Object ();
-    videogame[0] = 
-    {
-        nome : 'Master System'
-        ,ano_fab : 1982   
-        ,nro_control : 1
-        ,cpu : 8
-        ,midia : 'fita'
-    };
+// VETOR COM OBJETO, POSSUI AS LINHAS E COLUNAS JÁ PREENCHIDAS
+var videogame = new Object ();
+videogame[0] = 
+{
+    nome : 'Master System'
+    ,ano_fab : 1982   
+    ,nro_control : 1
+    ,cpu : 8
+    ,midia : 'fita'
+};
 
-    videogame[1] = 
-    {
-        nome : 'Mega-Drive'
-        ,ano_fab : 1987   
-        ,nro_control : 2
-        ,cpu : 16
-        ,midia : 'Fita'
-    };  
+videogame[1] = 
+{
+    nome : 'Mega-Drive'
+    ,ano_fab : 1987   
+    ,nro_control : 2
+    ,cpu : 16
+    ,midia : 'Fita'
+};  
 
-    videogame[2] = 
-    {
-        nome : 'Sega CD'
-        ,ano_fab : 1992   
-        ,nro_control : 3
-        ,cpu : 24
-        ,midia : 'CD'
-    };
-    
-    videogame[3] = 
-    {
-        nome : 'Sega 32X'
-        ,ano_fab : 1994  
-        ,nro_control : 4
-        ,cpu : 32
-        ,midia : 'CD'
-    };  
-    
-    videogame[4] = 
-    {
-        nome : 'Sega Saturn'
-        ,ano_fab : 1995  
-        ,nro_control : 5
-        ,cpu : 48
-        ,midia : 'CD'
-    };    
-    
+videogame[2] = 
+{
+    nome : 'Sega CD'
+    ,ano_fab : 1992   
+    ,nro_control : 3
+    ,cpu : 24
+    ,midia : 'CD'
+};
 
+videogame[3] = 
+{
+    nome : 'Sega 32X'
+    ,ano_fab : 1994  
+    ,nro_control : 4
+    ,cpu : 32
+    ,midia : 'CD'
+};  
+
+videogame[4] = 
+{
+    nome : 'Sega Saturn'
+    ,ano_fab : 1995  
+    ,nro_control : 5
+    ,cpu : 48
+    ,midia : 'CD'
+};    
+    
 
 // TABELA JÁ EXISTE NA ESTRUTURA BASE DO XML, PRECISAMOS DO ID DELE PARA ADICIONAR NELE AS PROXIMAS TAGS (NESTE CASO PARTES DA TABELA)
 var table = document.getElementById('tb');
@@ -109,7 +106,6 @@ for (var ncount = 0; ncount < Object.keys(colunas).length; ncount++) {
     thfor.innerHTML = colunas[ncount];   
 }
 
-
 // CRIA CORPO DAS LINHAS
 var tbody = document.createElement('tbody');
 
@@ -131,35 +127,40 @@ table.appendChild(tbody);
 // tr.appendChild(td);
 
 //td.innerHTML='teste';
-ncount_coluna = 0;
-alert(colunas_name[ncount_coluna]);
+
+// // ALIMENTANDO TABELA
+//  for (var ncount_coluna = 0; ncount_coluna < Object.keys(colunas_name).length; ncount_coluna ++) {
+// }
 
 // ALIMENTANDO TABELA
- for (var ncount_coluna = 0; ncount_coluna < Object.keys(colunas_name).length; ncount_coluna ++) {
-
+for (var ncount_linha = 0; ncount_linha < Object.keys(videogame).length; ncount_linha ++) {
+    
     // CRIA GRUPO DE LINHA
     // A CADA LINHA É UM GRUPO DE tr, AS LINHAS PROPRIAMENTE DITAS SÃO td
     var trfor = document.createElement('tr');
+    
     // ADICIONA GRUPO DA LINHA AO CORPO
-    tbody.appendChild(trfor);
+    tbody.appendChild(trfor);        
 
-    for (var ncount_linha = 0; ncount_linha < Object.keys(videogame).length; ncount_linha ++) {
-        
-      Object.keys(videogame[ncount_linha]).forEach(function(value) {
-        var valor_linha = videogame[ncount_linha][value];
+    // PASSA POR CADA COLUNA DA LINHA ATUAL DO OBJETO
+    Object.keys(videogame[ncount_linha]).forEach
+        (function(value) 
+            {
+            var valor_linha = videogame[ncount_linha][value];
 
-        // CRIA LINHA
-        var tdfor = document.createElement('td');
-        // ADICIONA LINHA AO GRUPO DE LINHA
-        trfor.appendChild(tdfor);        
-        
-        tdfor.innerHTML = valor_linha;
-		});      
+            // CRIA LINHA
+            var tdfor = document.createElement('td');
+            // ADICIONA LINHA AO GRUPO DE LINHA
+            trfor.appendChild(tdfor);        
 
-      // tdfor.innerHTML=videogame[ncount_linha].colunas_name[ncount_coluna];
-       //tdfor.innerHTML=videogame[ncount_linha].nome;
-    }
- }
+            // ALIMENTA LINHA
+            tdfor.innerHTML = valor_linha;
+            }   
+        );      
+
+    // tdfor.innerHTML=videogame[ncount_linha].colunas_name[ncount_coluna];
+    //tdfor.innerHTML=videogame[ncount_linha].nome;
+}
 
 // ABAIXO ESTÁ OUTRA FORMA DE ADICIONAR COLUNAS E LINHAS NA TABELA, MAS APENAS FUNCIONA EM TABLE, NÃO NAS OUTRAS TAGS DE XML
 // AINDA SIM O PROFESSOR RECOMNDA USAR O MODO DE CREATEELEMENT E APPENDCHILD PARA ADICIONAR AS TAGS.
