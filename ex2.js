@@ -91,20 +91,43 @@ thead.appendChild(tr);
 // TESTE USADO PARA CRIAR UMA COLUNA COM VALOR
 // var th = document.createElement('th');
 // tr.appendChild(th);
-// th.innerHTML='teste';
+// th.innerHTML='teste';,
 
-// CRIANDO COUNAS CONFORME O ARRAY DE COLUNAS ACIMA
-for (var ncount = 0; ncount < Object.keys(colunas).length; ncount++) {
+
+
+
+// // CRIANDO COUNAS CONFORME O ARRAY DE COLUNAS ACIMA
+// for (var ncount = 0; ncount < Object.keys(colunas).length; ncount++) {
 	
-    // CRIA COLUNA
-    var thfor = document.createElement('th');   
+    // // CRIA COLUNA
+    // var thfor = document.createElement('th');   
     
-    // ADICIONA COLUNA DO GRUPO DA COLUNA
-    tr.appendChild(thfor);   
+    // // ADICIONA COLUNA DO GRUPO DA COLUNA
+    // tr.appendChild(thfor);   
     
-    // PREENCHE VALOR DA COLUNA
-    thfor.innerHTML = colunas[ncount];   
-}
+    // // PREENCHE VALOR DA COLUNA
+    // thfor.innerHTML = colunas[ncount];   
+// }
+
+
+
+
+// PASSA POR CADA COLUNA DA LINHA ATUAL DO OBJETO
+Object.keys(colunas).forEach
+	(function(key) 
+		{
+		var valor_coluna = colunas[key];
+
+		// CRIA COLUNA
+		var thfor = document.createElement('th');   
+		
+		// ADICIONA COLUNA DO GRUPO DA COLUNA
+		tr.appendChild(thfor);        
+
+		// ALIMENTA LINHA
+		thfor.innerHTML = valor_coluna;
+		}   
+	); 
 
 // CRIA CORPO DAS LINHAS
 var tbody = document.createElement('tbody');

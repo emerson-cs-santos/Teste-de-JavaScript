@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to get the square root of each element in the array.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var numbers = [4, 9, 16, 25];
+
+function myFunction() {
+    
+      var products = [
+        {
+          name: "chair",
+          inventory: 5,
+          unit_price: 45.99
+        },
+        {
+          name: "table",
+          inventory: 10,
+          unit_price: 123.75
+        },
+        {
+          name: "sofa",
+          inventory: 2,
+          unit_price: 399.50
+        }
+      ];
+      
+     // Object.values().forEach(function(products) {
+      		Object.keys(products).forEach(function(key) {
+              var val = products[key];
+              
+              Object.keys(val).forEach(function(key) {
+              		document.getElementById("demo").innerHTML = key;
+              });
+              
+              
+  				//logic();
+			});	
+      //});
+      
+      
+  
+}
+</script>
+
+</body>
+</html>
