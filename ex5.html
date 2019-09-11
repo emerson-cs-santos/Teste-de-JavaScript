@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Exercicio de JS 5</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <script src="ex5.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Exercicio 5</h1>
+    </header>
+
+    <main>
+        <section>
+			
+            <form id="form" action="pagina.php" method="get">
+                
+                <!-- label for="nome" semanticamente para dizer para qual text a label se destina -->
+                
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" class="txt" name="nome" placeholder="nome">
+
+                <label for="end">Endereço</label>
+                <input type="text" id="end" class="txt" name="end" placeholder="Rua travessa da budega">  
+                
+                <label for="numero">Número</label>
+                <input type="text" id="numero" class="txt" name="numero" placeholder="666">  
+                
+                <!-- validar XXXXX-XXX -->
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" class="txt" name="cep" placeholder="06942-666">                   
+                
+                <!-- validar email (@) -->
+                <label for="email">E-mail</label>
+                <input type="text" id="email" class="txt" name="email" placeholder="email@servidor.com.br">
+                
+                <input type="submit" value="Enviar">
+                
+            </form>
+        </section>
+
+        <script>
+            iniciar();    
+        </script> 
+    </main>
+
+    <footer>
+        <div> <a href="index.html">Voltar ao inicio</a> </div>
+    </footer>
+</body>
+</html>
