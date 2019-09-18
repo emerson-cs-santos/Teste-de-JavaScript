@@ -1,0 +1,184 @@
+<html>
+	<head>
+		<style>
+			.selecionado {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="box" style="width: 500px; height: 500px; border: 4px solid darkred; margin: 0px auto;">
+
+				<h1 id="title" style="width: 100%; text-align: center;">Exerc�cios</h1>
+
+			<div id="font-size" style="width: 60px; height: 25px; border: 1px solid black; margin-left: 20px;">
+				<span id="font12" style="font-size: 12px; margin: 2px; cursor: pointer;">A</span>
+				<span id="font14" style="font-size: 14px; margin: 2px; cursor: pointer;">A</span>
+				<span id="font16" style="font-size: 16px; margin: 2px; cursor: pointer;">A</span>
+		</div>
+
+
+			<div id="innerBox" style ="margin: 0px auto; width: 200px;">
+				
+				<div id="tab" style="margin-top: 20px;">
+
+					<div id="tabControl" style="width: 200px; border: 1px solid darkgreen; height: 25px;">
+						<div id="tabButton1" style="width: 50px; height: 25px; border: 1px solid black; float: left; ">
+							tab 1
+						</div>
+						<div id="tabButton2" style="width: 50px; height: 25px; border: 1px solid black; float: left;">
+							tab 2
+						</div>
+						<div id="tabButton3" style="width: 50px; height: 25px; border: 1px solid black; float: left;">
+							tab 3
+						</div>
+					</div>
+
+					<div style="clear: both;"> </div>
+
+					<div id="tabContent" style="width: 200px; border: 1px solid darkgreen; height: 200px;">
+
+						<div id="tabContent1" style="width: 200px; height: 50px; border: 1px solid red;" >
+							conteudo tab1
+						</div>
+
+						<div id="tabContent2" style="width: 200px; height: 50px;  border: 1px solid green;" >
+							conteudo tab2
+						</div>
+
+						<div id="tabContent3" style="width: 200px; height: 50px; border: 1px solid blue;" >
+							conteudo tab3
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+  	
+      <script>
+      		//SEU CODIGO AQUI
+
+
+			// tabs
+			  var tabContent2 = document.getElementById('tabContent2');
+			  tabContent2.style.display='none';
+
+			  var tabContent3 = document.getElementById('tabContent3');
+			  tabContent3.style.display='none';
+
+
+			  var tabButton1 = document.getElementById('tabButton1');
+			  tabButton1.onclick=tab;
+
+			  var tabButton2 = document.getElementById('tabButton2');
+			  tabButton2.onclick=tab;
+
+			  var tabButton3 = document.getElementById('tabButton3');
+			  tabButton3.onclick=tab;
+
+
+
+		// fontes
+		var font12 = document.getElementById('font12');
+		font12.onclick=font;
+
+		var font14 = document.getElementById('font14');
+		font14.onclick=font;
+
+		var font16 = document.getElementById('font16');
+		font16.onclick=font;				
+
+
+
+function tab()
+{
+	var tab1 = document.getElementById('tabContent1');
+	var tab2 = document.getElementById('tabContent2');
+	var tab3 = document.getElementById('tabContent3');
+	
+	switch(this.id) 
+	{
+		case 'tabButton1':
+			tab1.style.display='block';
+			tab2.style.display='none';
+			tab3.style.display='none';
+		break;
+
+		case 'tabButton2':
+			tab1.style.display='none';
+			tab2.style.display='block';
+			tab3.style.display='none'; 
+		break;
+
+		case 'tabButton3':
+			tab1.style.display='none';
+			tab2.style.display='none';
+			tab3.style.display='block';
+		break;         
+
+	} 
+}	
+
+function font()
+{
+	var tab1 = document.getElementById('tabContent1');
+	var tab2 = document.getElementById('tabContent2');
+	var tab3 = document.getElementById('tabContent3');
+
+	var tabButton1 = document.getElementById('tabButton1');
+	var tabButton2 = document.getElementById('tabButton2');
+	var tabButton3 = document.getElementById('tabButton3');
+			 	
+	
+	switch(this.id) 
+	{
+		case 'font12':
+			tab1.style.fontSize='12px';
+			tab2.style.fontSize='12px';
+			tab3.style.fontSize='12px';
+
+			tabButton1.style.fontSize='12px';
+			tabButton2.style.fontSize='12px';
+			tabButton3.style.fontSize='12px';
+		break;
+		
+		case 'font14':
+			tab1.style.fontSize='14px';
+			tab2.style.fontSize='14px';
+			tab3.style.fontSize='14px';
+
+			tabButton1.style.fontSize='14px';
+			tabButton2.style.fontSize='14px';
+			tabButton3.style.fontSize='14px';
+		break;
+
+		case 'font16':
+			tab1.style.fontSize='16px';
+			tab2.style.fontSize='16px';
+			tab3.style.fontSize='16px';
+
+			tabButton1.style.fontSize='16px';
+			tabButton2.style.fontSize='16px';
+			tabButton3.style.fontSize='16px';			
+		break;
+	} 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+      </script>
+
+	<body>
+</html>

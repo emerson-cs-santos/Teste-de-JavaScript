@@ -1,0 +1,90 @@
+<html>
+	<head>
+
+		<style>
+			.selecionado {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+			<div id="tab" style="margin-top: 20px;">
+
+			</div>
+	
+	<script>
+
+		var tab = document.getElementById("tab");
+		
+		var tabControl = document.createElement('div');
+		tabControl.id='tabControl';
+		tabControl.style="width: 200px; border: 1px solid darkgreen; height: 25px;";
+		tab.appendChild(tabControl);
+
+		var tabButton1 = document.createElement('div');
+		tabButton1.style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;";
+		tabButton1.class='tabButton Idx1';
+		tabButton1.innerHTML='tab 1';
+
+		tabControl.appendChild(tabButton1);
+
+		var tabButton2 = document.createElement('div');
+		tabButton2.style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;";
+		tabButton2.class='tabButton Idx2';
+		tabButton2.innerHTML='tab 2';
+
+		tabControl.appendChild(tabButton2);	
+
+
+		var tabButton3 = document.createElement('div');
+		tabButton3.style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;";
+		tabButton3.class='tabButton Idx3';
+		tabButton3.innerHTML='tab 3';
+
+		tabControl.appendChild(tabButton3);	
+
+
+		var clear = document.createElement('div');
+		clear.style="clear: both;";
+		tab.appendChild(clear);		
+
+
+		var tabContent = document.createElement('div');
+		tabContent.style="width: 200px; border: 1px solid darkgreen; height: 200px;";
+		tab.appendChild(tabContent);
+
+
+		var tabContent1 = document.createElement('div');
+		tabContent1.id='tabContent1';
+		tabContent1.style="width: 200px; height: 50px; border: 1px solid red; display: block;";
+		tabContent1.class="tabContent tContentIdx1";
+		tabContent1.innerHTML='conteudo tab1';
+		tabContent.appendChild(tabContent1);
+
+
+		var tabContent2 = document.createElement('div');
+		tabContent2.id='tabContent2';
+		tabContent2.style="width: 200px; height: 50px; border: 1px solid red; display: block;";
+		tabContent2.class="tabContent tContentIdx2";
+		tabContent2.innerHTML='conteudo tab2';
+		tabContent2.appendChild(tabContent2);
+
+
+		var tabContent3 = document.createElement('div');
+		tabContent3.id='tabContent3';
+		tabContent3.style="width: 200px; height: 50px; border: 1px solid red; display: block;";
+		tabContent3.class="tabContent tContentIdx1";
+		tabContent3.innerHTML='conteudo tab3';
+		tabContent3.appendChild(tabContent3);											
+
+
+
+
+
+
+		
+
+
+	</script>
+	<body>
+</html>

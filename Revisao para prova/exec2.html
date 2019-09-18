@@ -1,0 +1,192 @@
+<html>
+	<head>
+		<style>
+			.naoValidado {
+				border: 2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" style="width: 500px; height: 500px; border: 4px solid darkred; margin: 0px auto;">
+			<h1 id="title" style="width: 100%; text-align: center;">Exerc�cio</h1>
+
+			<div id="innerBox" style ="margin: 0px auto; width: 300px;">
+					<form onSubmit="return validaForm ();">
+						<div style="margin-top: 20px; height: 20px;">							
+							<span >nome:</span><input id="name" type="text"/>							
+						</div>
+						<div style="margin-top: 20px; height: 20px;">							
+							<span >endere�o:</span><input id="address" type="text"/>							
+						</div>
+						<div style="margin-top: 20px; height: 20px;">							
+							<span >estado:</span>
+							<select name="estado" id='estado' >
+								<option value="AC">Acre</option>
+								<option value="AL">Alagoas</option>
+								<option value="AP">Amap�</option>
+								<option value="AM">Amazonas</option>
+								<option value="BA">Bahia</option>
+								<option value="CE">Cear�</option>
+								<option value="DF">Distrito Federal</option>
+								<option value="ES">Esp�rito Santo</option>
+								<option value="GO">Goi�s</option>
+								<option value="MA">Maranh�o</option>
+								<option value="MT">Mato Grosso</option>
+								<option value="MS">Mato Grosso do Sul</option>
+								<option value="MG">Minas Gerais</option>
+								<option value="PA">Par�</option>
+								<option value="PB">Para�ba</option>
+								<option value="PR">Paran�</option>
+								<option value="PE">Pernambuco</option>
+								<option value="PI">Piau�</option>
+								<option value="RJ">Rio de Janeiro</option>
+								<option value="RS">Rio Grande do Sul</option>
+								<option value="RN">Rio Grando do Norte</option>
+								<option value="RO">Rond�nia</option>
+								<option value="RR">Roraima</option>
+								<option value="SC">Santa Catarina</option>
+								<option value="SP">S�o Paulo</option>
+								<option value="SE">Sergipe</option>
+								<option value="TO">Tocantins</option>
+							</select>
+						</div>
+						<div style="margin-top: 20px; height: 20px;">							
+							<span >email:</span><input id="email" type="text"/>							
+						</div>
+						<div style="margin-top: 20px; height: 20px;">
+							<span>pass:</span><input id="pass" type="password"/>
+						</div>
+						<div style="margin-top: 20px; height: 40px;">
+							<span>CPF na nota fiscal?:</span><input type="checkbox" id="cpfNaNota"/><input id="cpf" type="text" disabled="disabled" />
+						</div>
+						<div style="margin-top: 20px; height: 40px;">
+							<span>pagamento:</span>
+								<input id='avista' type="radio" name="paymentType" value="avista"/><span>a vista</span>
+								<input id='2x' type="radio" name="paymentType" value="2x"/><span>2x</span>
+								<input id='3x' type="radio" name="paymentType" value="3x"/><span>3x</span>
+						</div>
+
+						<div style="margin-top: 20px; height: 20px;">
+							<input type="submit" id="submit" value="pagar"/>
+						</div>
+					</form>
+
+			</div>
+		</div>
+
+
+      <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script>
+      		//SEU CODIGO AQUI
+			  var cpfNaNota = document.getElementById('cpfNaNota');
+			  cpfNaNota.onclick=flag;
+
+		function flag()
+		{
+			var cpf = document.getElementById('cpf');
+			if(this.checked==false)
+			{
+				cpf.disabled =true;
+			}
+			else
+			{
+				cpf.disabled =false;
+			}
+			
+		}				  
+					
+			    
+		var submit = document.getElementById('submit');
+		submit.onclick=validacao;
+
+
+		function validacao()
+		{
+			
+			validacao_texto = true;
+			
+			// name
+			var name = document.getElementById('name');
+			if(name.value == '')
+			{
+				validacao_texto = false;
+			}
+
+			// address
+			var address = document.getElementById('address');
+			if(address.value == '')
+			{
+				validacao_texto = false;
+			}	
+
+			// email
+			var email = document.getElementById('email');
+			if(email.value == '')
+			{
+				validacao_texto = false;
+			}	
+
+			// pass
+			var pass = document.getElementById('pass');
+			if(pass.value == '')
+			{
+				validacao_texto = false;
+			}		
+
+			// cpf
+			var cpf = document.getElementById('cpf');
+			var cpfNaNota = document.getElementById('cpfNaNota');
+			
+			if(cpfNaNota.checked == true)
+			{
+				if(cpf.value == '')
+				{
+					validacao_texto = false;
+				}	
+			}													
+
+			if (!validacao_texto)
+			{
+				alert('Preencha todo os campos!');
+				return false;
+			}
+
+			var avista = document.getElementById('avista');
+			var duasx = document.getElementById('2x');
+			var tresx = document.getElementById('3x');
+
+			if(avista.checked==false && duasx.checked==false && tresx.checked==false )
+			{
+				alert('Escolha ao menos uma forma de pagamento!');
+				return false;
+			}
+
+
+			var estado = document.getElementById("estado");
+			var opt = estado.options[estado.selectedIndex];
+			alert(opt.value);
+			alert(opt.text);
+
+
+			if( avista.checked==true )
+			{
+				alert(avista.value);
+			}
+
+			if(duasx.checked==true )
+			{
+				alert(duasx.value);
+			}
+
+			if( tresx.checked==true )
+			{
+				alert(tresx.value);
+			}
+		}			
+			
+
+
+      </script>
+
+	<body>
+</html>

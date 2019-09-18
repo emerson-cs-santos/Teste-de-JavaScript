@@ -1,0 +1,86 @@
+<html>
+	<head>
+
+		<style>
+			.selecionado {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+	<div>
+	<table>
+	<tr>
+		<td/><td><input type="button" value="/\" id="up"/></td><td/>
+	</tr>
+	<tr>
+		<td><input type="button" value="&lt;" id="left"/></td><td/><td><td><input type="button" value="&gt;" id="right"/></td>
+	</tr>
+	<tr>
+		<td/><td><input type="button" value="\/" id="down"/></td><td/>
+	</tr>
+	</table>
+
+	<div style="width: 450px; height: 450px; margin: 20px; border: 2px solid black;">
+		<div id="box" style="width: 20px; height: 20px; position: absolute; top: 325px; left: 240px; background-color: blue; border: 2px solid black; "/>
+	</div>
+	
+	
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+		//SEU CODIGO AQUI
+		
+		var up = document.getElementById('up');
+		up.onclick=cima;
+
+		function cima()
+		{
+			//alert('cima');
+			var box = document.getElementById('box');
+			box.style="width: 20px; height: 20px; position: absolute; top: 150px; left: 240px; background-color: blue; border: 2px solid black; ";
+
+			
+		}	
+
+
+		var down = document.getElementById('down');
+		down.onclick=baixo;
+
+		function baixo()
+		{
+			//alert('baixo');
+			var box = document.getElementById('box');
+			box.style="width: 20px; height: 20px; position: absolute; top: 500px; left: 240px; background-color: blue; border: 2px solid black; ";			
+			
+		}			
+
+		var right = document.getElementById('right');
+		right.onclick=direita;
+
+		function direita()
+		{
+			//alert('direita');
+
+			var box = document.getElementById('box');
+			box.style="width: 20px; height: 20px; position: absolute; top: 325px; left: 360px; background-color: blue; border: 2px solid black; ";				
+			
+		}	
+
+
+		var left = document.getElementById('left');
+		left.onclick=esquerda;
+
+		function esquerda()
+		{
+			//alert('esquerda');
+			var box = document.getElementById('box');
+			box.style="width: 20px; height: 20px; position: absolute; top: 325px; left: 100px; background-color: blue; border: 2px solid black; ";							
+			
+		}							
+
+			
+
+	</script>
+	<body>
+</html>

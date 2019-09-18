@@ -1,0 +1,95 @@
+Use o arquivo em anexo como base para os exercícios. Usar javascript puro (não use jquery)
+
+1)
+
+a) implemente o tabs
+
+b) implemente a funcionalidade “tamanho de fonte”. Adicione eventos nas letras AAA, para que elas apliquem o estilo (font-size) de 12px, 14px e 16px, na parte de conteudo interna da pagina (div de id innerBox)
+
+
+2) 
+
+a) aplique uma função de validação ao botão submit 
+
+b) valide (conteúdo diferente de vazio) todos os inputs do tipo text e password Caso algum campo não esteja validado, tenha certeza que a função de validação atribuída no item a retorne false. 
+
+c) faça com que se o usuário clicar no checkbox id =”cpfNaNota”, todos os campos desabilitados do form sejam habilitados 
+
+d) consiga o valor do combobox estado e exibia-o através de um alerta 
+
+e) consiga o valor do radiobutton paymentType e exibia-o através de um alerta
+
+ 
+
+3) 
+
+Utilize o atributo value e o evento keyup para replicar o que for digitado na caixa de texto 1 para a caixa de texto 2, enquanto o usuário digita. 
+
+4) 
+
+Adicione elementos (um a um) à div: 
+
+<div id="tab" style="margin-top: 20px;"> 
+
+</div>
+
+ 
+
+de modo que ela tenha a seguinte estrutura:
+
+ 
+
+<div id="tab" style="margin-top: 20px;">
+
+       <div id="tabControl" style="width: 200px; border: 1px solid darkgreen; height: 25px;">
+
+              <div id="tabButton1" style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;" class="tabButton Idx1 selecionado">
+
+                    tab 1
+
+             </div>
+
+             <div id="tabButton2" style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;" class="tabButton Idx2">
+
+                    tab 2
+
+             </div>
+
+             <div id="tabButton3" style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;" class="tabButton Idx3">
+
+                    tab 3
+
+             </div>
+
+       </div>
+
+       <div style="clear: both;"> </div>
+
+       <div id="tabContent" style="width: 200px; border: 1px solid darkgreen; height: 200px;">
+
+             <div id="tabContent1" style="width: 200px; height: 50px; border: 1px solid red; display: block;" class="tabContent tContentIdx1">
+
+                    conteudo tab1
+
+             </div>
+
+             <div id="tabContent2" style="width: 200px; height: 50px;  border: 1px solid green; display: none;" class="tabContent tContentIdx2" >
+
+                    conteudo tab2
+
+             </div>
+
+             <div id="tabContent3" style="width: 200px; height: 50px; border: 1px solid blue; display: none;" class="tabContent tContentIdx3">
+
+                    conteudo tab3
+
+             </div>
+
+       </div>
+
+</div>
+
+ 5) Controle a caixa azul, fazendo com que as setas alterem a posição top e left do elemento.
+
+ 6) Implemente o tabs percorrendo a arvore DOM (ao inves de obter os elementos usando querySelector e getElementById)
+	apenas pode usar o id da tab
