@@ -46,21 +46,21 @@
 
 			  var tab = document.getElementById('tab');
 
-			  tab.children[2].children[0].id='tabButton1';
-			  tab.children[2].children[1].id='tabButton2';
-			  tab.children[2].children[2].id='tabButton3';
+			  tab.children[0].children[0].id='tabButton1';
+			  tab.children[0].children[1].id='tabButton2';
+			  tab.children[0].children[2].id='tabButton3';
 
 			  tab.children[2].children[1].style.display='none';
 			  tab.children[2].children[2].style.display='none';
 
-			  tab.children[0].id='tabContent1'
-			  tab.children[0].onclick=tab;
+			  tab.children[2].children[0].id='tabContent1'
+			  tab.children[2].children[0].onclick=tab;
 
-			  tab.children[1].id='tabContent2'
-			  tab.children[1].onclick=tab;
+			  tab.children[2].children[1].id='tabContent2'
+			  tab.children[2].children[1].onclick=tab;
 
-			  tab.children[1].id='tabContent3'
-			  tab.children[2].onclick=tab;
+			  tab.children[2].children[2].id='tabContent3'
+			  tab.children[2].children[2].onclick=tab;
 
 
 function tab()
