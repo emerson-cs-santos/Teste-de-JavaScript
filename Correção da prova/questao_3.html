@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Correção da prova</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <header>
+        <h1>Correção da prova - Questão 3</h1>
+    </header>
+
+    <main>
+        <section>
+            <style> .selecionado { font-weight: bold; } </style>
+                        
+            <div style="width: 150px">
+                <div style="float:left">
+                        <div id="bc1" class="barraconteudo"
+                        style="width: 150px; height: 25px; border: 1px solid black; float: left; cursor: pointer;">
+                            barra de conteudo 1
+                        </div>
+                        <div id="c1" class="conteudo" 
+                        style="width: 150px; height: 200px; border: 1px solid black; display: none;">
+                            conteudo 1
+                        </div>
+                </div>
+                <div style="float:left">
+                    <div id="bc2" class="barraconteudo"
+                        style="width: 150px; height: 25px; border: 1px solid black; float: left; cursor: pointer;">
+                        barra de conteudo 2
+                    </div>
+                    <div id="c2" class="conteudo" 
+                        style="width: 150px; height: 200px; border: 1px solid black; display: none;">
+                        conteudo 2
+                    </div>
+                </div>
+                <div style="float:left">
+                    <div id="bc3" class="barraconteudo" 
+                        style="width: 150px; height: 25px; border: 1px solid black; float: left; cursor: pointer;">
+                        barra de conteudo 3
+                    </div>
+                    <div id="c3" class="conteudo" 
+                        style="width: 150px; height: 200px; border: 1px solid black; display: none;">
+                        conteudo 3
+                    </div>
+                </div>
+            </div>
+
+		</section>
+    </main>
+
+    <footer>
+        <div> <a href="index.html">Voltar ao inicio</a> </div>
+    </footer>    
+</body>
+
+<script>
+    
+    var barra1 = document.getElementById('bc1');
+    barra1.onclick = menu1;
+
+    var barra2 = document.getElementById('bc2');
+    barra2.onclick = menu2;
+    
+    var barra3 = document.getElementById('bc3');
+    barra3.onclick = menu3;    
+
+    function menu1()
+    {
+        var conteudo = document.getElementById('c1');
+        var barra = document.getElementById('bc1');
+
+        if(conteudo.style.display == 'none')
+        {
+            conteudo.style.display = 'block';
+            barra.classList.add('selecionado');
+        }
+        else
+        {
+            conteudo.style.display = 'none';
+            barra.classList.remove('selecionado');
+        }
+    }
+
+    function menu2()
+    {
+        var conteudo = document.getElementById('c2');
+        var barra = document.getElementById('bc2');
+
+        if(conteudo.style.display == 'none')
+        {
+            conteudo.style.display = 'block';
+            barra.classList.add('selecionado');
+        }
+        else
+        {
+            conteudo.style.display = 'none';
+            barra.classList.remove('selecionado');
+        }
+    }    
+
+    function menu3()
+    {
+        var conteudo = document.getElementById('c3');
+        var barra = document.getElementById('bc3');
+
+        if(conteudo.style.display == 'none')
+        {
+            conteudo.style.display = 'block';
+            barra.classList.add('selecionado');
+        }
+        else
+        {
+            conteudo.style.display = 'none';
+            barra.classList.remove('selecionado');
+        }
+    }     
+
+</script>   
+</html>

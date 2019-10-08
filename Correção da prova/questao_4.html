@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Correção da prova</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <header>
+        <h1>Correção da prova - Questão 4</h1>
+    </header>
+
+    <main>
+        <section>
+            <div id="tab" style="margin-top: 20px;">
+
+                <div style="width: 200px; border: 1px solid darkgreen; height: 25px;">
+
+                    <div  style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;">
+                        tab 1
+                    </div>
+
+                    <div style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;">
+                        tab 2
+                    </div>
+
+                    <div style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;" >
+                        tab 3
+                    </div>
+
+                </div>
+
+                <div style="clear: both;"> </div>
+
+                <div  style="width: 200px; border: 1px solid darkgreen; height: 200px;">
+                    
+                    <div style="width: 200px; height: 50px; border: 1px solid red; display: block;">
+                        conteudo tab1
+                    </div>
+                    
+                    <div  style="width: 200px; height: 50px;  border: 1px solid green; display: none;"  >
+                        conteudo tab2
+                    </div>
+                    
+                    <div  style="width: 200px; height: 50px; border: 1px solid blue; display: none;" >
+                        conteudo tab3
+                    </div>
+
+                </div>
+
+            </div>
+
+		</section>
+    </main>
+
+    <footer>
+        <div> <a href="index.html">Voltar ao inicio</a> </div>
+    </footer>    
+</body>
+
+<script>
+    var tab = document.getElementById('tab');
+
+    var tab1 = tab.children[0].children[0];
+    tab1.onclick = mudar1;
+
+    var tab2 = tab.children[0].children[1];
+    tab2.onclick = mudar2;   
+    
+    var tab3 = tab.children[0].children[2];
+    tab3.onclick = mudar3;     
+
+    function mudar1()
+    {
+        var conteudo1 = tab.children[2].children[0];
+        conteudo1.style.display='block';
+
+        var conteudo2 = tab.children[2].children[1];
+        conteudo2.style.display='none';
+        
+        var conteudo3 = tab.children[2].children[2];
+        conteudo3.style.display='none';
+    }
+
+    function mudar2()
+    {
+        var conteudo1 = tab.children[2].children[0];
+        conteudo1.style.display='none';
+
+        var conteudo2 = tab.children[2].children[1];
+        conteudo2.style.display='block';
+        
+        var conteudo3 = tab.children[2].children[2];
+        conteudo3.style.display='none';
+    }    
+
+    function mudar3()
+    {
+        var conteudo1 = tab.children[2].children[0];
+        conteudo1.style.display='none';
+
+        var conteudo2 = tab.children[2].children[1];
+        conteudo2.style.display='none';
+        
+        var conteudo3 = tab.children[2].children[2];
+        conteudo3.style.display='block';
+    }      
+
+</script>   
+</html>

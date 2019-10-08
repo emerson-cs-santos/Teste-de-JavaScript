@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Correção da prova</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <header>
+        <h1>Correção da prova - Questão 2</h1>
+    </header>
+
+    <main>
+        <section>
+            <form>
+
+                <div style="margin-top: 20px; height: 20px;">
+                    <span >nome:</span><input id="cadName" type="text"/>
+                </div>
+
+                <div style="margin-top: 20px; height: 20px;">
+                    <span >estado:</span>
+                    <select name="UF" >
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RN">Rio Grando do Norte</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select> 
+                </div>
+                    
+                <div style="margin-top: 20px; height: 20px;">
+                    <span >email:</span><input id="cadEmail" type="text" class="cadEemail"/>
+                </div>
+                <div style="margin-top: 20px; height: 20px;">
+                    <span>pass:</span><input id="cadPass" type="password" class="cadPass"/>
+                </div>
+                <div style="margin-top: 20px; height: 40px;">
+                    <span>sexo:</span>
+                        <input type="radio" name="genero" value="male"/><span>masculino</span>
+                        <input type="radio" name="genero " value="female"/><span>feminino</span>
+                </div>
+                <div style="margin-top: 20px; height: 40px;">
+                    <span>Receber emails promocionais?:</span><input type="checkbox" id="promocao"/>
+                </div>
+                <div style="margin-top: 20px; height: 20px;">
+                    <input type="submit" id="enviar" value="cadastrar"/>
+                </div>
+
+            </form>
+		</section>
+    </main>
+
+    <footer>
+        <div> <a href="index.html">Voltar ao inicio</a> </div>
+    </footer>    
+</body>
+
+<script>
+
+    // Questão A
+    var mail = document.getElementById('cadEmail');
+    mail.style.color='blue';
+
+    var pass = document.getElementById('cadPass');
+    pass.style.color='red';    
+
+
+    // Questão B
+    var mail = document.querySelector('.cadEemail');
+    mail.style.backgroundColor='yellow';
+
+    var pass = document.querySelector('.cadPass');
+    pass.style.backgroundColor='green'; 
+    
+    // Questão C
+    var bnt = document.getElementById('enviar');
+    bnt.onclick = valid;
+
+    bnt.addEventListener('click',valid_2);
+
+    function valid()
+    {
+        // Questão D -- Apenas a parte de validar o nome
+        var nome = document.getElementById('cadName');
+        if(nome.value == '')
+        {
+            alert('Nome vazio!');
+        }        
+        
+        alert('teste');
+        return false;
+    }    
+
+    function valid_2()
+    {
+        alert('teste_2');
+        return false;
+    }
+</script>   
+</html>
