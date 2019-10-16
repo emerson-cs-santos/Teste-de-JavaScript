@@ -1,0 +1,77 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+
+* {
+    border: 0;
+    margin: 0;
+}
+
+#caixa {
+    width: 200px;
+    height: 40px;
+    border: 1px solid black;
+    margin: 15px;
+}
+
+#barra {
+    height: 40px;
+    background-color: red;
+    width: 0%;
+}
+
+</style>
+
+<input type="button" value='Carregar sem JQuery' onclick='iniciar()'>
+
+<div>
+    <input type="button" value='Carregar COM JQuery' onclick='iniciar_jq()'>
+</div>
+
+<div id="caixa">
+    <div id="barra">
+        <span id='progresso'>0%</span>
+    </div>
+</div>
+
+<script>
+
+    var barra = document.getElementById('barra');
+    barra.style.width = '0px';        
+    
+    // Sem JQUERY
+    function iniciar()
+    {
+
+        var barra = document.getElementById('barra');
+        var controle = barra.style.width;
+        controle = controle.replace('px','');
+        controle = parseInt(controle);
+
+        var progresso = document.getElementById('progresso');
+
+        if (controle < 200)
+        {
+            controle = controle + 20;
+            barra.style.width = controle + 'px';
+
+            // =D
+            progresso.innerHTML = (controle/2) + '%';
+
+            setTimeout(iniciar,1000);            
+        }
+    }
+
+    // Com JQUERY
+    function iniciar_jq()
+    {
+       // $('#barra').css('width','0px').animate({width: 200 +'px'},1500); 
+        $('#barra').css('width','0px').animate({width: 100 +'%'},1500); 
+    }
+
+</script>
+
+
+<footer>
+    <div> <a href="index.html">Voltar ao inicio</a> </div>
+</footer>
