@@ -24,13 +24,80 @@
 		<div id="box" style="width: 20px; height: 20px; position: absolute; top: 325px; left: 240px; background-color: blue; border: 2px solid black; "/>
 	</div>
 	
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	
 	<script>
 		//SEU CODIGO AQUI
-		$('#up').css('top','350px');
+
+		$('#up').click(up);
+		$('#down').click(down);
+		$('#left').click(left);
+		$('#right').click(right);
 		
+		function up()
+		{
+			vtop = parseInt($('#box').css('top').replace('px',''));
+
+			if (vtop <= 125)
+			{
+				vtop = 525;
+			}
+			else
+			{
+				vtop = vtop - 50;
+			}
+
+			$('#box').animate({top: vtop + 'px'});
 			
+		}
+
+		function down()
+		{
+			vtop = parseInt($('#box').css('top').replace('px',''));
+
+			if (vtop >= 525)
+			{
+				vtop = 125;
+			}
+			else
+			{
+				vtop = vtop + 50;
+			}
+
+			$('#box').animate({top: vtop + 'px'});
+		}	
+		
+		function left()
+		{
+			vleft = parseInt($('#box').css('left').replace('px',''));
+
+			if (vleft <= 40)
+			{
+				vleft = 440;
+			}
+			else
+			{
+				vleft = vleft - 50;
+			}
+
+			$('#box').animate({left: vleft + 'px'});
+		}	
+		
+		function right()
+		{
+			vleft = parseInt($('#box').css('left').replace('px',''));
+
+			if (vleft >= 440)
+			{
+				vleft = 40;
+			}
+			else
+			{
+				vleft = vleft + 50;
+			}
+
+			$('#box').animate({left: vleft + 'px'});
+		}		
 
 	</script>
 
