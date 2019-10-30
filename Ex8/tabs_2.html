@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+    <title>Aula 8 - parte 2</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class='container'>
+        <header class='row'>
+            <div class="col-12">
+                <h1>Aula 8 parte 2</h1>
+            </div>
+          </header>
+
+          <main>
+              <section class='row'>
+                  <div class='col-12'>
+                        <h2>Teste Ajax 2</h2>
+
+                        <div id="tab" style="margin-top: 20px;">
+
+                            <div style="width: 200px; border: 1px solid darkgreen; height: 25px;">
+                
+                                <div  style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;">
+                                        tab 1
+                                </div>
+                
+                                <div style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;">
+                                        tab 2
+                                </div>
+                
+                                <div style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;" >
+                                        tab 3
+                                </div>
+                
+                            </div>
+            
+                            <div style="clear: both;"> </div>
+            
+                            <div  style="width: 200px; border: 1px solid darkgreen; height: 200px;">
+                                    
+                                <div style="width: 200px; height: 50px; border: 1px solid red; display: block;">
+                                        conteudo PURO 1
+                                </div>
+                                    
+                                <div  style="width: 200px; height: 50px;  border: 1px solid green; display: none;"  >
+                                        conteudo PURO 2
+                                </div>
+                                    
+                                <div  style="width: 200px; height: 50px; border: 1px solid blue; display: none;" >
+                                        conteudo PURO 3
+                                </div>
+                
+                            </div>
+                        </div>                    
+                    </div>
+                </section>
+
+              <script>
+
+                var tab = document.getElementById('tab');
+
+                var tab1 = tab.children[0].children[0];
+                tab1.onclick = mudar1;
+
+                var tab2 = tab.children[0].children[1];
+                tab2.onclick = mudar2;   
+
+                var tab3 = tab.children[0].children[2];
+                tab3.onclick = mudar3;     
+
+                function mudar1()
+                {
+                var conteudo1 = tab.children[2].children[0];
+                conteudo1.style.display='block';
+                
+                tabs_ajax(conteudo1,'1');
+
+                var conteudo2 = tab.children[2].children[1];
+                conteudo2.style.display='none';
+
+                var conteudo3 = tab.children[2].children[2];
+                conteudo3.style.display='none';
+                }
+
+                function mudar2()
+                {
+                var conteudo1 = tab.children[2].children[0];
+                conteudo1.style.display='none';
+
+                var conteudo2 = tab.children[2].children[1];
+                conteudo2.style.display='block';
+
+                tabs_ajax(conteudo2,'2');              
+
+                var conteudo3 = tab.children[2].children[2];
+                conteudo3.style.display='none';
+                }    
+
+                function mudar3()
+                {
+                var conteudo1 = tab.children[2].children[0];
+                conteudo1.style.display='none';
+
+                var conteudo2 = tab.children[2].children[1];
+                conteudo2.style.display='none';
+
+                var conteudo3 = tab.children[2].children[2];
+                conteudo3.style.display='block';
+
+                tabs_ajax(conteudo3,'3');               
+                } 
+
+                function tabs_ajax(tab,pagina) 
+                {
+            
+                    var params = "pagina=" + pagina;
+                    
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () 
+                    {
+                        if (this.readyState == 4 && this.status == 200) 
+                        {
+                            var resposta = this.responseText;
+                            tab.innerHTML = resposta;
+                        }
+                    }
+
+                    // MODO GET
+                    xmlhttp.open("GET", "conteudo_tabs.php?" + params,true);
+                    xmlhttp.send();
+                }                  
+
+            </script>              
+          </main>
+
+          <footer class='row'>
+              <div class='col-12'>
+                <a href="index.html">Voltar ao inicio</a>
+              </div>
+          </footer>          
+    </div>
+</body>
+</html>
