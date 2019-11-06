@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Exercicios de JS 9</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <header>
+        <h1>Exercicios de JS 9 - EX 2 - Ajax</h1>
+    </header>
+
+    <main>
+        <section>
+
+            <div>
+                <form>
+                    <select name="Estado" id='estado'>
+                        <option value="SP">SÂO PAULO</option>
+                        <option value="RJ">RIO DE JANEIRO</option>
+                    </select>
+                </form>
+                <input type="button" value="Buscar" onclick="buscar()">
+            </div>
+
+            <form>
+                <select name="Cidades" id='cidades'>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </form>
+        </section>
+
+        <script>
+            function buscar()
+            {
+                var estado = document.getElementById("estado");			    
+                var opt = estado.options[estado.selectedIndex];
+
+                var params = "uf=" + opt.value;
+                    
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () 
+                {
+                    if (this.readyState == 4 && this.status == 200) 
+                    {
+                        var resposta = JSON.parse(this.responseText);                     
+                        
+                        for (i = 0; i < resposta.length; i++) 
+                        {
+                           
+                            var x = document.getElementById("cidades");
+                            x.remove(x.i);                              
+                            
+                            var cidades = document.getElementById("cidades");
+                            var option = document.createElement("option");
+                            option.text = resposta[i];
+                            cidades.add(option);
+                        }  
+                    }
+                }
+
+                xmlhttp.open("GET", "Ex2.php?" + params,true);
+                xmlhttp.send();
+            } 
+        </script>            
+    </main>
+
+    <footer>
+        <div> <a href="index.html">Voltar ao inicio</a> </div>
+    </footer>
+</body>
+</html>
